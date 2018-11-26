@@ -33,62 +33,48 @@ int main()
 
 //     cout << "////////////////////////////////////////////////////////////////////////////////" << endl;
 
+    /* For and While loop Practice */
     int start = 0, end = 0;
     cout << "Enter 2 numbers: " << endl;
     cin >> start;
     cin >> end;
-    cout << "The sum of the numbers between " << start << " and " << end << " are "  << sumOfNumber(start, end);
-}
-
-bool sumOfNumber(int a, int b) 
-{
-        int resultA = 0, resultB = 0;
-        resultA = forLoop(a, b);   
-        resultB = whileLoop(a, b);
-        if(forLoop != whileLoop)
-                return false;
-        else 
-                return true;   
+    cout << "The sum of the numbers between " << start << " and " << end << " result in " 
+         << whileLoop(start, end) << " and " << forLoop(start, end);
 }
 
 int forLoop(int a, int b) 
 {
-        int sum = 0;
-        if(a == b)
+        if(a != b)
         {
-                return 0;
-        }
-        else if(a < b) 
-        {
-                for(int i = a; a <= b; a++) 
+                int sum = 0;
+                if (a < b)
                 {
-                        sum = sum + a;
+                        for(int i = a; i <= b; i++)
+                        {
+                                sum += i;
+                        }
+                        return sum;
                 }
-                return sum;
-        }
-        else 
-        {
-                for(int i = b; b >= a; b++) 
+                else if (b < a)
                 {
-                        sum += b;
+                        for(int i = b; i <= a; i++)
+                        {
+                                sum += i;
+                        }
+                        return sum;
                 }
-                return sum;
-        } 
+        }
         return 0;
 }
 
 int whileLoop(int a, int b) 
 {
-        if(a == b)
-        {
-                return 0;
-        }
-        else
+        if(a != b)
         {
                 int sum = 0;
                 if(a < b)
                 {
-                        while (a < b)
+                        while (a <= b)
                         {
                                 sum += a;
                                 a++;
@@ -97,13 +83,13 @@ int whileLoop(int a, int b)
                 }
                 else if(b < a)
                 {
-                        while (b < a)
+                        while (b <= a)
                         {
                                 sum += b;
                                 b++;
                         }
                         return sum;
                 }
-                
         }
+        return 0;
 }
