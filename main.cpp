@@ -32,8 +32,7 @@ int main()
     cout << "The product of: " << "\n" << v3 << " and \n" << v4 << " is \n" << v3 * v4 << endl; 
     
     
-    cout << "/////////////////////////////////////1.3////////////////////////////////////////" << endl;
-
+    cout << "/////////////////////////////////////1.4////////////////////////////////////////" << endl;
     /* For and While loop Practice */
     int start = 0, end = 0;
     cout << "Enter 2 numbers: " << endl;
