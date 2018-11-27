@@ -6,40 +6,81 @@ using namespace std;
 bool sumOfNumber(int start, int end);
 int forLoop(int start, int end);
 int whileLoop(int start, int end);
+void unknownInputs();
+void ifStatement();
 
 //Executable Function
 int main() 
 {
-    int v1 = 0, v2 = 0;
-    cout << "Enter two numbers: " << endl;
-    cin >> v1 >> v2; 
-    cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << endl;
+//     int v1 = 0, v2 = 0;
+//     cout << "Enter two numbers: " << endl;
+//     cin >> v1 >> v2; 
+//     cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << endl;
 
-    cout << "///////////////////////////////////1.2//////////////////////////////////////////" << endl;
-    //1.2 Excercises
-    /* 1. Write a program to pring "Hello World" on the standard output */
-    cout << "Hello World" << endl;
+//     cout << "///////////////////////////////////1.2//////////////////////////////////////////" << endl;
+//     //1.2 Excercises
+//     /* 1. Write a program to pring "Hello World" on the standard output */
+//     cout << "Hello World" << endl;
 
-    /* 2. Our program used the addition operator, +, to add two numbers. Write a program that
-            uses the multiplication operator, *, to print the product instead. */
-    int v3 = 0, v4 = 0;
-    cout << "Enter two numbers:" << endl;
-    cin >> v3 >> v4;
-    cout << "The product of " << v3 << " and " << v4 << " is " << v3 * v4 << endl;
+//     /* 2. Our program used the addition operator, +, to add two numbers. Write a program that
+//             uses the multiplication operator, *, to print the product instead. */
+//     int v3 = 0, v4 = 0;
+//     cout << "Enter two numbers:" << endl;
+//     cin >> v3 >> v4;
+//     cout << "The product of " << v3 << " and " << v4 << " is " << v3 * v4 << endl;
 
-    /* 3. We wrote the output in one large statement. Rewrite the program to use a seperate
-            statement to print each operand. */
-    cout << "The product of: " << "\n" << v3 << " and \n" << v4 << " is \n" << v3 * v4 << endl; 
+//     /* 3. We wrote the output in one large statement. Rewrite the program to use a seperate
+//             statement to print each operand. */
+//     cout << "The product of: " << "\n" << v3 << " and \n" << v4 << " is \n" << v3 * v4 << endl; 
     
     
-    cout << "/////////////////////////////////////1.4////////////////////////////////////////" << endl;
-    /* For and While loop Practice */
-    int start = 0, end = 0;
-    cout << "Enter 2 numbers: " << endl;
-    cin >> start;
-    cin >> end;
-    cout << "The sum of the numbers between " << start << " and " << end << " result in " 
-         << whileLoop(start, end) << " and " << forLoop(start, end);
+//     cout << "/////////////////////////////////////1.4////////////////////////////////////////" << endl;
+//     /* For and While loop Practice */
+//     int start = 0, end = 0;
+//     cout << "Enter 2 numbers: " << endl;
+//     cin >> start;
+//     cin >> end;
+//     cout << "The sum of the numbers between " << start << " and " << end << " result in " 
+//          << whileLoop(start, end) << " and " << forLoop(start, end);
+
+//     cout << "/////////////////////////////////////1.4.3.1//////////////////////////////////////" << endl;
+//     unknownInputs();
+
+    cout << "/////////////////////////////////////1.4.3//////////////////////////////////////" << endl;
+    ifStatement();
+}
+
+void ifStatement() 
+{
+        int currVal = 0, val = 0;
+        if(cin >> currVal)
+        {
+                int count = 1;
+                while(cin >> val)
+                {
+                        if(val == currVal)
+                        {
+                                count++;
+                        }
+                        else 
+                        {
+                                cout << currVal << " occurs " << count << " times" << endl;
+                                currVal = val;
+                                count = 1;
+                        }
+                }
+                cout << currVal << " occurs " << count << " times" << endl;
+        }
+}
+
+void unknownInputs() 
+{
+    int sum = 0, value = 0;
+    while(cin >> value)
+    {
+            sum += value;
+    }
+    cout << "The sum of the inputs is " << sum << endl;
 }
 
 int forLoop(int a, int b) 
